@@ -70,10 +70,12 @@ namespace EWSInboxRuleGenerator
                     if (type == "Delete")
                     {
                         newRule.Actions.Delete = true;
+                        newRule.Actions.MarkAsRead = true;
                     }
 
                     if (type == "Hide")
                     {
+                        newRule.Actions.MarkAsRead = true;
                         newRule.Actions.MoveToFolder = WellKnownFolderName.JunkEmail;
                     }
 
